@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Uppercase - Flask App</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f9; }
+        nav { background-color: #333; display: flex; padding: 10px 20px; }
+        nav a { color: white; text-decoration: none; padding: 10px 15px; display: block; }
+        nav a:hover { background-color: #444; }
+        .navbar { display: flex; align-items: center; }
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 180px;
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dropdown-content a { padding: 10px 15px; display: block; color: white; }
+        .dropdown-content a:hover { background-color: #555; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .container { padding: 20px; }
+        form input[type="text"] { padding: 8px; margin-right: 10px; }
+        form button { padding: 8px 12px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <div class="dropdown">
+            <a href="#">Work ▾</a>
+            <div class="dropdown-content">
+                <a href="/touppercase">To Uppercase</a>
+                <a href="/circle">Circle Area</a>
+                <a href="/triangle">Triangle Area</a>
+            </div>
+        </div>
+        <a href="/contacts">Contacts</a>
+    </nav>
+
+    <div class="container">
+        <h1>Convert Text to Uppercase</h1>
+        <form method="POST">
+            <input type="text" name="text" placeholder="Enter text" required>
+            <button type="submit">Convert</button>
+        </form>
+        {% if result %}
+            <p><strong>Result:</strong> {{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

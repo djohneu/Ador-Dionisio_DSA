@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contacts - Flask App</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f9; }
+        nav { background-color: #333; display: flex; padding: 10px 20px; }
+        nav a { color: white; text-decoration: none; padding: 10px 15px; display: block; }
+        nav a:hover { background-color: #444; }
+        .navbar { display: flex; align-items: center; }
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 180px;
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dropdown-content a { padding: 10px 15px; display: block; color: white; }
+        .dropdown-content a:hover { background-color: #555; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .container { padding: 30px; display: flex; justify-content: center; }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 { margin-top: 0; }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        .contact-item i {
+            margin-right: 12px;
+            font-size: 20px;
+            color: #333;
+            width: 25px;
+            text-align: center;
+        }
+        .contact-item a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <div class="dropdown">
+            <a href="#">Work ▾</a>
+            <div class="dropdown-content">
+                <a href="/touppercase">To Uppercase</a>
+                <a href="/circle">Circle Area</a>
+                <a href="/triangle">Triangle Area</a>
+            </div>
+        </div>
+        <a href="/contacts">Contacts</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>Contact Information</h1>
+            
+            <div class="contact-item">
+                <i class="fab fa-facebook"></i>
+                <a href="https://www.facebook.com/dashiell.john.ador.dionisio" target="_blank">
+                    Dashiell John Ador Dionisio
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:djdionisio418@gmail.com">djdionisio418@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+63 994 173 5038</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <a href="https://instagram.com/d.johneu" target="_blank">@d.johneu</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
